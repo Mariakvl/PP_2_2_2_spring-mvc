@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import web.service.CarService;
 
 
-
 @Controller
 @RequestMapping("/cars")
 public class CarController {
@@ -18,8 +17,7 @@ public class CarController {
     private CarService carService;
 
     @GetMapping()
-    public String index(@RequestParam(value = "count", required = false
-            , defaultValue = "5") Integer count, Model model) {
+    public String index(@RequestParam(value = "count", required = false) Integer count, Model model) {
 
         model.addAttribute("cars", carService.getCars(count));
 
